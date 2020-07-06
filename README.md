@@ -1,3 +1,3 @@
-# HTML5 Game Portal Backend(Django)
+# HTML5 Game Portal
 
 A game portal for serving HTML5 games.
