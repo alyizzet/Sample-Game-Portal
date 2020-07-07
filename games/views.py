@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import Game
 
 
-def index(request):
+def homepage(request):
     games = Game.objects.all()
     context = {
         'games': games
     }
-    return render(request, 'games/index.html', context)
+    return render(request, 'homepage.html', context)
