@@ -10,33 +10,39 @@
     <link rel="icon" type="image/png"  href="{% static 'logo.png' %}"/>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <nav>
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-    </ul>
+  
+    
     <div class="nav-wrapper orange lighten-1">
-      <a href="#" class="brand-logo">  <i class="material-icons">public</i> Azerion Game Portal</a>
+      
+    <a> <img href="#" class="brand-logo"><img src="../static/Capture.jpg" alt="" height="64" width="64"> <a href="#" class="brand-logo center">Azerion Game Portal</a> </img></img></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Games</a></li>
-        <li><a href="badges.html">Sign-in</a></li>
-        <li><a href="collapsible.html">Sign-up</a></li>
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Game Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="btn" href="admin">Sign-in</a></li>
+        <li><a class='btn' href="collapsible.html">Sign-up</a></li>
+
+     <!-- Dropdown Trigger -->
+  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Categories</a>  
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+  </ul>
+        
       </ul>
       
     </div>
   </nav>
 
-{%for Game in games %}
-<div class = container>
-  <div class="row">
-    <div class="col s12 m4">
+  <div class="row" >
+    {%for Game in games %}
+    <div class="col s6 m2 offset-s3">
       <div class="card small z-depth-2">
         <div class="card-image">
-          <img src="{% static 'logo.png' %}">
+          <img src="{{Game.image.url}}">
           <span class="card-title">{{Game.title}}</span>
         </div>
         <div class="card-content">
@@ -47,19 +53,59 @@
         </div>
       </div>
     </div>
+    {%endfor%}
     </div>
-  </div>
-{%endfor%}
-  
 
-<div class ="container">
+
+<div class="text-align center">
   <h2> Are you stuck? Don't Worry, here's a Walkthrough!</h2>
 </div>
 
-<div class="video-container">
-    <iframe width="350" height="180" src="https://www.youtube.com/watch?v=X74aF8k4vC4" frameborder="0" allowfullscreen></iframe>
+
+
+<div class="container ">
 </div>
-    
+<div class="row">
+  <div class="col s2">
+    <div class="card-small right"> Ad Space 1</div>
+</div>
+
+</div>
+  <div class="card-large center"> 
+  <iframe width="1000" height="600" src="https://www.youtube.com/embed/X74aF8k4vC4" frameborder="0"  allowfullscreen></iframe>
+</div>
+
+</div>
+  
+
+
+
+<footer class="page-footer orange lighten-1"">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s5">
+        <h5 class="white-text">Privacy Disclaimer</h5>
+        <p class="grey-text text-lighten-4">
+          Data security
+          We use appropriate technical and organizational security measures to protect stored personal data against manipulation, partial or total loss, and unauthorized access by third parties. Our security measures are continually upgraded as technology advances.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links for more fun Games!</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://www.gamesgames.com/">Games Games - Enjoy Spill Games!</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://gamedistribution.com/">Visit Game Distribution to publish your game here!</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://kizi.com/">Kizi - Great Website for fun games!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2020 Azerion 
+    <a class="grey-text text-lighten-4 right" href="https://www.azerion.com/">Azerion Website</a>
+    </div>
+  </div>
+</footer>
 
 <body>
   

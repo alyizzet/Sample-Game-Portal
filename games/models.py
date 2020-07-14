@@ -6,7 +6,7 @@ from django.db import models
 class Game(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='games/images/', blank=True)
+    image = models.ImageField(upload_to='static/', blank=True)
     url = models.URLField(null=True, blank=True)
 
     def __str__(self):
